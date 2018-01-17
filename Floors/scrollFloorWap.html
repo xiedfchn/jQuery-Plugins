@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			.floor-nav{
+				height: 50px;
+				line-height: 50px;
+				width: 100%;
+				text-align: center;
+				background: #fff;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 999;
+			}
+			.scroll-nav{
+				display: inline-block;
+				width: 50px;
+				height: 49px;
+				line-height: 49px;
+				border-bottom: 1px solid transparent;
+			}
+			.scroll-nav.active{
+				color: blue;
+				border-bottom: 1px solid blue;
+			}
+			.content{
+				margin-top: 50px;
+			}
+			.scroll-floor{width: 100%;height: 1000px;background: green;color: #fff;text-align: center;line-height: 1000px;font-size: 50px;}
+			.floor1{background: red;}
+			.floor2{background: yellow;line-height: 500px;}
+			.more{
+				display: inline-block;
+				width: 200px;
+				height: 50px;
+				line-height: 50px;
+				font-size: 20px;
+				background: #eee;
+				color: #555;
+				border-radius: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="floor-nav">
+			<span class="scroll-nav active">商品</span>
+			<span class="scroll-nav">评论</span>
+			<span class="scroll-nav">详情</span>
+		</nav>
+		<div class="content">
+			<section class="scroll-floor floor1">商品区</section>
+			<section class="scroll-floor floor2">
+				评论区
+				<p class="more">查看更多评论</p>
+			</section>
+			<section class="scroll-floor floor3">详情区</section>
+		</div>
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script src="jquery.scroll.floor.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('.more').click(function(){
+				$(this).hide();
+				$('.floor2').css('height',2000);
+			});
+			scrollFloor({
+				floorClass : '.scroll-floor',       //楼层盒子class;默认为'.scroll-floor'
+				navClass : '.scroll-nav',           //导航盒子class;默认为'.scroll-nav'
+				activeClass : 'active',             //导航高亮class;默认为'active'
+				delayTime:500,                      //点击导航，滚动条滑动到该位置的时间间隔;默认为200
+				activeTop:200,                      //楼层到窗口的某个位置时，导航高亮（设置该位置）;默认为100
+				scrollTop:0                         //点击导航，楼层滑动到窗口的某位置;默认为100
+			});
+		</script>
+	</body>
+</html>
