@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>demo jquery.iCheck.js</title>
+  <link rel="stylesheet" href="js/jquery.icheck.css">
+</script>
+</head>
+
+<body>
+<input type="checkbox" id ="checkAll" > 全选
+<input type="checkbox" name="items" checked> 旅游
+<input type="checkbox" name="items" > 书籍
+<input type="checkbox" name="items"> 美食
+<br/>
+<br/>
+<input type="radio" name="hobby" > 美食
+<input type="radio" name="hobby"> 旅游
+<input type="radio" name="hobby" > 书籍
+
+<script src="js/jquery-1.11.2.js"></script>
+<script src="js/jquery.icheck.js"></script>
+<script type="text/javascript">
+
+// 插件调用
+$('input').iCheck();
+
+// 全选脚本
+$('#checkAll').click(function(){
+	
+	$(':checkbox').prop("checked", this.checked );
+	
+	$(':checkbox').iCheck('update');
+	
+})
+
+$('[name="items"]:checkbox').on('click',function(){
+	
+	$('#checkAll').prop("checked", $('[name="items"]:checkbox').length == $('[name="items"]:checkbox:checked').length )
+	
+	$('#checkAll').iCheck('update');
+});
+</script>
+</body>
+</html>

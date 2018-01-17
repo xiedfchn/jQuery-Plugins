@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>未定义</title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/main.css" />
+</head>
+
+<style>
+body {
+	margin: 100px;
+}
+.select-box {
+	position: relative;
+	width: 210px;
+}
+.select-box * {
+	box-sizing: border-box;
+}
+.select-result {
+	border-radius: 3px;
+	width: 100%;
+	background-color: #fff;
+	padding: 5px;
+	line-height: 25px;
+	font-size: 12px;
+	height: 35px;
+	border: 1px solid #aaa;
+	cursor: pointer;
+}
+.select-box.show { 
+	z-index: 1001; 
+}
+.select-box.show .select-result {
+	z-index: 1; 
+	position: relative;
+	border-radius: 3px 3px 0px 0px;
+	box-shadow: 0px 0px 7px rgba(0,0,0,.2);
+}
+
+.select-list {
+	border: 1px solid #aaa;
+	top: 34px;
+	left: 0px;
+	display: none;
+	background-color: #fff;
+	position: absolute;
+	box-shadow: 0px 0px 7px rgba(0,0,0,.2);
+	width: 210px;
+	border-radius: 0px 0px 3px 3px;
+}
+.select-box.show .select-list {
+	display: block;
+}
+.select-list>li{
+	padding: 5px;
+	width: 100%;
+}
+.select-list>li {
+	border-bottom: 1px solid #aaa;
+}
+.select-list>li:last-child {
+	border-bottom: none;
+}
+.select-list>li.active {
+	background-color: #eee;
+}
+.select-list>li:hover {
+	background-color: #ccc;
+}
+.select-arrow {
+	z-index: 2; 
+	height: 0;
+	width: 0;
+	position: absolute;
+	top: 0;
+	right: 15px;
+	bottom: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #cccccc;
+	content: '';
+	display: block;
+	margin: auto 0;
+}
+</style>
+<body>
+<div class="select-box">
+	<input type="hidden" name="city1" />
+	<div class="select-result"></div>
+    <i class="select-arrow"></i>
+    <ul class="select-list">
+    	<li data-value="请选择城市" class="active" >请选择城市</li>
+    	<li data-value="北京">北京</li>
+    	<li data-value="上海">上海</li>
+    	<li data-value="广州">广州</li>
+    	<li data-value="深圳">深圳</li>
+    </ul>
+</div>
+<br>
+<br>
+<div class="select-box">
+	<input type="hidden" name="city2" />
+	<div class="select-result">请选择城市</div>
+    <i class="select-arrow"></i>
+    <ul class="select-list">
+    	<li data-value="请选择城市"  >请选择城市</li>
+    	<li data-value="北京" class="active">北京</li>
+    	<li data-value="上海">上海</li>
+    	<li data-value="广州">广州</li>
+    	<li data-value="深圳">深圳</li>
+    </ul>
+</div>
+<!-- jquery 1.11.1 -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- iSelect 下拉列表插件 -->
+<script src="js/iselect.js"></script>
+<script>
+$('.select-box').iSelect();
+</script>
+</body>
+</html>

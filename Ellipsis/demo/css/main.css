@@ -1,0 +1,9 @@
+body {
+	font: 12px/1.5 "Microsoft YaHei",SimSun,Tahoma, Helvetica, Arial, sans-serif;
+}
+.textBox p{
+	text-indent: 20px;
+}
+.textBox2 {
+	width: 400px;
+}

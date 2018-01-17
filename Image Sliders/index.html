@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<style type="text/css">
+/*基础样式 此部分样式为插件展示页的一些样式，使用插件时不会理会，引入上方的link即可*/
+
+body {
+    background-color: #1B1B1B;
+    text-align: center;
+    color: #fff;
+    font-family: 微软雅黑;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: top;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+ul li {
+    list-style: none;
+}
+
+.banner {
+    display: inline-block;
+}
+
+.desc {
+    text-align: center;
+}
+
+.desc pre {
+    color: #fff;
+    display: inline-block;
+    text-align: left;
+    font: 14px 微软雅黑;
+}
+
+.tips {
+    padding-bottom: 50px;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.tips li {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 6px 3px #ddd;
+}
+
+#ctrl {
+    text-align: left;
+}
+
+#ctrl2 {
+    text-align: right;
+}
+</style>
+
+<body>
+
+
+    <div class="banner" id="banner1">
+        <div class="move" id="move">
+            <ul>
+                <li><img src="images/a1.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a2.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a3.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a4.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a5.png" alt="" width="450" height="260"></li>
+            </ul>
+        </div>
+        <div class="ctrl" id="ctrl"></div>
+    </div>
+
+
+    <div class="banner" id="banner2">
+        <div class="move" id="move1">
+            <ul>
+                <li><img src="images/a1.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a2.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a3.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a4.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a5.png" alt="" width="450" height="260"></li>
+            </ul>
+        </div>
+        <div class="ctrl" id="ctrl1"></div>
+    </div>
+
+
+    <div class="banner" id="banner3">
+        <div class="move" id="move2">
+            <ul>
+                <li><img src="images/a1.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a2.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a3.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a4.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a5.png" alt="" width="450" height="260"></li>
+            </ul>
+        </div>
+        <div class="ctrl" id="ctrl2"></div>
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/myscroll.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        // 调用
+        $('#banner1').myscroll({
+            picEl: $('#move'), //图片父级，不传默认为banner内第1个div
+            ctrlEl: $('#ctrl'), //控制条父级，包括小圆点和左右箭头，不传默认为banner内第2个div
+            libs: true, //是否创建底部小圆点，true || false,不传默认true
+            arrows: true, //是否创建左右箭头，true || false,不传默认true
+            autoPlay: true, //是否自动播放，true || false,不传默认true
+            time: 1000, //自动播放间隔时间，true || false,不传默认2000
+            speed: 400, //图片切换速度，不传默认400
+            effect: 'left' //轮播的改变方式 top||left||fade，不传默认left
+        });
+        $('#banner2').myscroll({
+            effect: 'top'
+        });
+        $('#banner3').myscroll({
+            time:1500,
+            effect: 'fade'
+        });
+    })
+    </script>
+</body>
+
+</html>

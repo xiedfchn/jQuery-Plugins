@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.cl {
+	clear: both;
+}
+.wrap {
+	height: 5000px;
+	width: 1000px;
+	margin: 40px auto;
+}
+.selecterBox {
+	display: inline-block;
+	padding: 10px;
+	border: 1px solid #aaa;
+	width: 
+}
+.selecter {
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+}
+.mt20 {
+	margin-top: 20px;
+}
+p {
+	margin-top: 10px;
+}
+.newClass {
+	background-color: #fff;
+	box-shadow: 0px 0px 10px #eee;
+}
+</style>
+<body>
+<div class="wrap">
+	<div class="selecterBox">
+        <select class="selecter">
+            <option value="选择老师">选择老师</option>
+            <option value="张璐">张璐</option>
+            <option value="吴飞">吴飞</option>
+            <option value="刘凤静">刘凤静</option>
+        </select>
+        <select class="selecter">
+            <option value="选择班级">选择班级</option>
+            <option value="张璐">张璐</option>
+            <option value="吴飞">吴飞</option>
+            <option value="刘凤静">刘凤静</option>
+        </select>
+        <select class="selecter">
+            <option value="选择班级">选择院系</option>
+            <option value="张璐">张璐</option>
+            <option value="吴飞">吴飞</option>
+            <option value="刘凤静">刘凤静</option>
+        </select>
+    </div>
+    <div class="question">
+        <h5 class="title mt20">职业规范：</h5>
+        <p>1. 参与邪教组织，在讲坛上散布违背党和国家方针政策的言行，有违法犯罪行为<br>
+            <input type="radio" > A:没有<br>
+            <input type="radio" > B:有
+        </p>
+        <p>2. 参与邪教组织，在讲坛上散布违背党和国家方针政策的言行，有违法犯罪行为<br>
+            <input type="radio" > A:没有<br>
+            <input type="radio" > B:有
+        </p>
+        <p>3. 参与邪教组织，在讲坛上散布违背党和国家方针政策的言行，有违法犯罪行为<br>
+            <input type="radio" > A:没有<br>
+            <input type="radio" > B:有
+        </p>
+        <p>4. 参与邪教组织，在讲坛上散布违背党和国家方针政策的言行，有违法犯罪行为<br>
+            <input type="radio" > A:没有<br>
+            <input type="radio" > B:有
+        </p>
+        <p>5. 参与邪教组织，在讲坛上散布违背党和国家方针政策的言行，有违法犯罪行为<br>
+            <input type="radio" > A:没有<br>
+            <input type="radio" > B:有
+        </p>
+    </div>
+</div>
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.ipin.js"></script>
+<script>
+
+// 演示使用方法
+$('.selecterBox').iPin({
+	class:'newClass',
+});
+</script>
+</body>
+</html>
